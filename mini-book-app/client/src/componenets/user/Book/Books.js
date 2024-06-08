@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-const URL = `${process.env.REACT_APP}/books`
+const URL = `${process.env.REACT_APP_URL}/books`
 const fetchHandler = async () => {
   return await axios.get(URL).then((res) => res.data)
 }
