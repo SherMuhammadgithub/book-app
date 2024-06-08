@@ -15,7 +15,7 @@ function SignUp() {
 
         try {
 
-            await axios.post("http://localhost:5000/user/signup", {
+            await axios.post(`${process.env.REACT_APP_URL}/user/signup`, {
                 email, password
             })
                 .then(res => {

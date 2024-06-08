@@ -12,7 +12,7 @@ export default function BookDetail() {
   useEffect(() => {
     const fetchHandler = async () => {
       await axios
-        .get(`http://localhost:5000/books/${id}`)
+        .get(`${process.env.REACT_APP_URL}/books/${id}`)
         .then((res) => res.data)
         .then((data) => setInputs(data.book));
     };

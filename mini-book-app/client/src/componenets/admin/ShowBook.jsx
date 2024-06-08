@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Layout from './Layout';
 
-const URL = 'http://localhost:5000/books';
+const URL = `${process.env.REACT_APP_URL}/books`;
 
 const fetchHandler = async () => {
     return await axios.get(URL).then((res) => res.data);
@@ -19,7 +19,7 @@ export default function ShowBook() {
 
     const deleteHandler = async (bookId) => {
         try {
-            await axios.delete(`http://localhost:5000/books/${bookId}`);
+            await axios.delete(`${process.env.REACT_APP_URL}/books/${bookId}`);
             // Update the state to remove the deleted book
             setBooks((prevBooks) => prevBooks.filter((book) => book._id !== bookId));
         } catch (error) {

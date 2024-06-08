@@ -28,7 +28,7 @@ export default function AddBook() {
 
     }
     const sendRequest = async () => {
-        await axios.post("http://localhost:5000/books", {
+        await axios.post(`${process.env.REACT_APP_URL}/books`, {
             name: String(inputs.name),
             author: String(inputs.author),
             description: String(inputs.description),
