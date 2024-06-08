@@ -27,3 +27,6 @@ mongoose.connect(
         });
     })
     .catch((err) => console.log("Error connecting to Database", err));
+app.get("/", (req, res) => {
+res.json("Hello");
+});
