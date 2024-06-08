@@ -7,7 +7,7 @@ const router2 = require("./routes/User-route");
 // MiddleWare 
 app.use(express.json()); // error solution for converting data 
 app.use(cors({
-     origin:"",
+     origin:"https://book-app-frontend-virid.vercel.app",
     methods:["POST", "GET"],
     credentials: true
 }
