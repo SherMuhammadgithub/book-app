@@ -6,8 +6,13 @@ const router = require("./routes/Book-route");
 const router2 = require("./routes/User-route");
 // MiddleWare 
 app.use(express.json()); // error solution for converting data 
-app.use(cors());
-app.use("/books", router); // localhost:5000/books 
+app.use(cors({
+     origin:"",
+    methods:["POST", "GET"],
+    credentials: true
+}
+));
+app.use("/books", router); // localhost:5000/books
 app.use("/user", router2); // localhost:5000/user
 
 mongoose.connect(
